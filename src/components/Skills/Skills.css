@@ -1,0 +1,84 @@
+.skills-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-xl);
+    margin-top: -var(--spacing-md);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--spacing-md);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: rgba(17, 34, 64, 0.7);
+    backdrop-filter: blur(5px);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-neon);
+    background: var(--bg-tertiary);
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+}
+
+.skill-card:hover .skill-icon {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.skill-card h3 {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0;
+}
+
+.skill-card p {
+    display: none;
+    /* Hiding description for grid look */
+}
+
+/* Tech Stack Grid Look */
+.skill-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover::after {
+    transform: scaleX(1);
+}

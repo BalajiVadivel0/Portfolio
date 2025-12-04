@@ -1,0 +1,131 @@
+.education {
+    /* Removed background-color */
+}
+
+/* Reusing timeline styles from Experience.css but scoped to education if needed.
+   Since we updated Experience.css with specific styles, we should ensure Education uses similar styles.
+   I'll copy the Git Timeline styles to Education.css to maintain consistency.
+*/
+
+.education .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+.education .timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: var(--border-color);
+    top: 0;
+    bottom: 0;
+    left: 29px;
+}
+
+.education .timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: var(--spacing-xl);
+}
+
+.education .timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.education .timeline-dot {
+    position: absolute;
+    left: 22px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 2px solid var(--text-secondary);
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.education .timeline-item:hover .timeline-dot {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px var(--secondary-color);
+}
+
+.education .timeline-content {
+    background: rgba(17, 34, 64, 0.7);
+    backdrop-filter: blur(5px);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.education .timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+    background: var(--bg-secondary);
+    transform: rotate(45deg);
+    border-left: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.education .timeline-item:hover .timeline-content {
+    transform: translateX(5px);
+    border-color: var(--secondary-color);
+}
+
+.education .timeline-date {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.education .timeline-date::before {
+    content: 'year: ';
+    color: var(--text-secondary);
+}
+
+.education .timeline-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.education .timeline-company {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.education .timeline-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.education .timeline-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.education .timeline-skill {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(189, 147, 249, 0.1);
+    color: var(--secondary-color);
+    border-radius: var(--radius-sm);
+}
