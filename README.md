@@ -1,46 +1,53 @@
 # Personal Portfolio Website
 
-A modern, responsive portfolio website built with pure HTML, CSS, and vanilla JavaScript, featuring smooth animations and a Node.js backend for contact form handling.
+A modern, responsive portfolio website built with React and Vite, featuring smooth animations and interactive components.
 
 ## Features
 
 - 🎨 Modern, clean design with smooth animations
 - 📱 Fully responsive (mobile, tablet, desktop)
-- ⚡ Fast loading with no framework overhead
-- 🎭 CSS animations with scroll triggers
-- 📧 Working contact form with backend validation
+- ⚡ Fast loading with Vite's optimized build
+- 🎭 Smooth scroll animations and transitions
+- 🎯 Component-based architecture
 - ♿ Accessible and semantic HTML
-- 🎯 SEO-friendly structure
+- 🚀 Hot Module Replacement (HMR) for fast development
 
 ## Tech Stack
 
-### Frontend
-- HTML5
-- CSS3 (with CSS Variables)
-- Vanilla JavaScript (ES6+)
-- Intersection Observer API for scroll animations
-
-### Backend
-- Node.js
-- Express.js
-- CORS enabled
-- Rate limiting for security
+- React 18
+- Vite 5
+- CSS3 (with modern features)
+- JavaScript (ES6+)
 
 ## Project Structure
 
 ```
 .
-├── index.html              # Main HTML file
-├── css/
-│   ├── variables.css       # CSS custom properties
-│   ├── animations.css      # Animation keyframes
-│   └── styles.css          # Main styles
-├── js/
-│   └── main.js            # JavaScript functionality
-├── backend/
-│   ├── server.js          # Express server
-│   └── package.json       # Backend dependencies
-└── README.md
+├── index.html              # Entry HTML file
+├── src/
+│   ├── App.jsx            # Main App component
+│   ├── App.css            # App styles
+│   ├── main.jsx           # React entry point
+│   ├── components/        # React components
+│   │   ├── About/
+│   │   ├── Achievements/
+│   │   ├── Certificates/
+│   │   ├── Contact/
+│   │   ├── Cursor/
+│   │   ├── Education/
+│   │   ├── Experience/
+│   │   ├── Footer/
+│   │   ├── Hero/
+│   │   ├── Navbar/
+│   │   ├── ParticlesBackground/
+│   │   ├── Projects/
+│   │   └── Skills/
+│   ├── hooks/             # Custom React hooks
+│   └── utils/             # Utility functions
+├── public/                # Static assets
+│   └── assets/
+├── package.json
+└── vite.config.js         # Vite configuration
 ```
 
 ## Getting Started
@@ -53,71 +60,52 @@ A modern, responsive portfolio website built with pure HTML, CSS, and vanilla Ja
 
 1. Clone the repository
 ```bash
-git clone <your-repo-url>
-cd portfolio
+git clone https://github.com/BalajiVadivel0/Portfolio.git
+cd Portfolio
 ```
 
-2. Install backend dependencies
+2. Install dependencies
 ```bash
-cd backend
 npm install
 ```
 
 ### Running the Application
 
-1. Start the backend server:
+1. Start the development server:
 ```bash
-cd backend
-npm start
+npm run dev
 ```
-
-The server will run on `http://localhost:5000`
 
 2. Open your browser and navigate to:
 ```
-http://localhost:5000
+http://localhost:5173
 ```
 
-The server serves both the static HTML files and handles the contact form API.
+The development server includes Hot Module Replacement (HMR) for instant updates.
 
 ## Customization
 
 ### Update Personal Information
 
-Edit `index.html` and update:
-- Your name in the hero section
-- About section content
-- Skills and proficiency levels
-- Project details
-- Social media links
+Edit the component files in `src/components/` to update:
+- Hero section (`Hero/Hero.jsx`)
+- About section (`About/About.jsx`)
+- Skills and proficiency levels (`Skills/Skills.jsx`)
+- Projects (`Projects/Projects.jsx`)
+- Education (`Education/Education.jsx`)
+- Experience (`Experience/Experience.jsx`)
+- Contact information (`Contact/Contact.jsx`)
 
-### Modify Colors
+### Modify Styles
 
-Edit `css/variables.css` to change the color scheme:
-```css
-:root {
-    --primary-color: #6366f1;
-    --secondary-color: #ec4899;
-    /* ... other variables */
-}
-```
+Each component has its own CSS file for easy customization:
+- Global styles: `src/App.css`
+- Component-specific styles: `src/components/[ComponentName]/[ComponentName].css`
 
-### Adjust Animations
+### Add Assets
 
-Modify animation timings and effects in `css/animations.css`
-
-## Contact Form
-
-The contact form includes:
-- Client-side validation
-- Server-side validation
-- Rate limiting (5 requests per hour per IP)
-- XSS protection through input sanitization
-
-To add email functionality, integrate a service like:
-- Nodemailer
-- SendGrid
-- Mailgun
+Place your images, resume, and other assets in:
+- `public/assets/` for static files
 
 ## Browser Support
 
@@ -126,35 +114,43 @@ To add email functionality, integrate a service like:
 - Safari (last 2 versions)
 - Edge (last 2 versions)
 
-## Performance
+## Build for Production
 
-- No build process required
-- Minimal JavaScript
-- CSS animations for 60fps performance
-- Lazy loading ready
-- Optimized for Core Web Vitals
+Create an optimized production build:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
 
 ## Deployment
 
-### Frontend + Backend Together
+Deploy to static hosting platforms:
+- **Vercel** (Recommended for Vite projects)
+- **Netlify**
+- **GitHub Pages**
+- **Cloudflare Pages**
 
-Deploy to platforms that support Node.js:
-- Heroku
-- Railway
-- DigitalOcean
-- Render
+### Quick Deploy to Vercel
 
-### Frontend Only
-
-For static hosting (without contact form):
-- GitHub Pages
-- Netlify
-- Vercel
+```bash
+npm install -g vercel
+vercel
+```
 
 ## License
 
 MIT License - feel free to use this for your own portfolio!
 
-## Credits
+## Author
 
-Created for internship applications - showcasing web development skills.
+**Balaji Vadivel**
+
+## Acknowledgments
+
+Built with React and Vite for modern web development.
